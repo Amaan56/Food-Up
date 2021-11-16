@@ -13,52 +13,53 @@ const OrderReducer = (state, action) => {
     }, 0);
   };
 
+  const selectedItemIndex = state.menuItems.findIndex(
+    (item) => action.item.id === item.id
+  );
+
+  let selectedItem;
+  let updatedOrderItems;
+
   switch (action.type) {
     case 'ADD_TO_CART':
-      const selectedItemIndex = state.menuItems.findIndex(
-        (item) => action.item.id === item.id
-      );
-
-      const selectedItem = {
+      selectedItem = {
         ...state.menuItems[selectedItemIndex],
         quantity: action.item.quantity,
         inCart: true,
       };
 
-      const newOrderItems = [
+      updatedOrderItems = [
         ...state.menuItems.slice(0, selectedItemIndex),
         selectedItem,
         ...state.menuItems.slice(selectedItemIndex + 1),
       ];
 
       return {
-        menuItems: newOrderItems,
-        cartItemCount: countCartItem(newOrderItems),
-        totalPrice: calculateTotal(newOrderItems),
+        menuItems: updatedOrderItems,
+        cartItemCount: countCartItem(updatedOrderItems),
+        totalPrice: calculateTotal(updatedOrderItems),
       };
 
     case 'CHANGE_QUANTITY':
-      const selectedItemIndex = state.menuItems.findIndex(
-        (item) => action.item.id === item.id
-      );
-
-      const selectedItem = {
+      selectedItem = {
         ...state.menuItems[selectedItemIndex],
-        quantity: state.menuItems[selectedItemIndex].quantity + step,
+        quantity: state.menuItems[selectedItemIndex].quantity + action.step,
         inCart:
-          state.menuItems[selectedItemIndex].quantity + step > 0 ? true : false,
+          state.menuItems[selectedItemIndex].quantity + action.step > 0
+            ? true
+            : false,
       };
 
-      const newOrderItems = [
+      updatedOrderItems = [
         ...state.menuItems.slice(0, selectedItemIndex),
         selectedItem,
         ...state.menuItems.slice(selectedItemIndex + 1),
       ];
 
       return {
-        menuItems: newOrderItems,
-        cartItemCount: countCartItem(newOrderItems),
-        totalPrice: calculateTotal(newOrderItems),
+        menuItems: updatedOrderItems,
+        cartItemCount: countCartItem(updatedOrderItems),
+        totalPrice: calculateTotal(updatedOrderItems),
       };
 
     default:

@@ -1,0 +1,39 @@
+.header {
+  background-color: brown;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4.2rem;
+  padding: 2rem 6rem;
+}
+
+.header-logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.header-cart {
+  display: flex;
+  background-color: rgb(83, 2, 2);
+  padding: 0.6rem 2rem;
+  border-radius: 15px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-cart-icon {
+  width: 1.2rem;
+  margin-top: 5px;
+}
+
+.header-cart-count {
+  background-color: brown;
+  border-radius: 20px;
+  padding: 0.2rem 0.8rem;
+}
+
+.header-cart span {
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}

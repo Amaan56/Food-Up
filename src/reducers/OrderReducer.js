@@ -24,7 +24,8 @@ const OrderReducer = (state, action) => {
     case 'ADD_TO_CART':
       selectedItem = {
         ...state.menuItems[selectedItemIndex],
-        quantity: action.item.quantity,
+        quantity:
+          state.menuItems[selectedItemIndex].quantity + action.item.quantity,
         inCart: true,
       };
 

@@ -1,0 +1,31 @@
+.order-item {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  padding: 0.8rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.order-item-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.order-item-left span {
+  margin: 2px;
+}
+
+.order-item-right-control label {
+  font-weight: bold;
+}
+.order-item-right-control input {
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  width: 3rem;
+  margin-left: 8px;
+}
+
+.order-item-right-control {
+  margin: 5px;
+}

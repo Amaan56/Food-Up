@@ -1,0 +1,9 @@
+.order-list {
+  width: 60%;
+  margin: 2.5rem auto;
+}
+
+.order-list ul {
+  list-style: none;
+  padding: 0.8rem 3rem;
+}

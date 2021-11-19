@@ -16,7 +16,7 @@ const Header = () => {
         </div>
         <span>Your Cart</span>
         <span className={styles['header-cart-count']}>
-          {orderContext.cartItemCount}
+          {orderContext.state.cartItemCount}
         </span>
       </div>
     </div>

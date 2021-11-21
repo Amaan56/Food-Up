@@ -1,0 +1,16 @@
+.order-cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid brown;
+  padding: 0.6rem;
+}
+
+.order-cart-item-content-quantity {
+  border: 1px solid #ccc;
+  font-weight: bold;
+  padding: 0.2rem;
+  border-radius: 5px;
+  font-size: 0.7rem;
+  margin-left: 2rem;
+}

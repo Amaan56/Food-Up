@@ -4,6 +4,7 @@ import initialState from './initial-state';
 const OrderContext = React.createContext({
   state: initialState,
   addToCart: (item) => {},
+  changeQuantity: (item, step) => {},
 });
 
 export default OrderContext;

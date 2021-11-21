@@ -1,9 +1,25 @@
 .button {
-  background-color: brown;
-  color: white;
   border-radius: 12px;
   border-style: none;
   font-weight: bold;
   padding: 0.3rem 1.5rem;
   cursor: pointer;
+}
+
+.button-normal {
+  background-color: brown;
+  color: white;
+  margin: 2px;
+}
+
+.button-outline {
+  border: 1px solid brown;
+  background-color: white;
+  color: brown;
+  margin: 2px;
+}
+
+.button[disabled] {
+  opacity: 0.4;
+  cursor: not-allowed;
 }

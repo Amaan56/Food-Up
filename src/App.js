@@ -1,3 +1,5 @@
+import ReactDOM from 'react-dom';
+
 import { useReducer, useState } from 'react';
 
 import initialState from './store/initial-state';
@@ -43,12 +45,18 @@ const App = () => {
     >
       <Header showCart={showCartHandler} />
       <OrderList />
-      {showCart && <Backdrop hideCart={hideCartHandler} />}
-      {showCart && (
-        <Modal>
-          <OrderCart hideCart={hideCartHandler} />
-        </Modal>
-      )}
+      {showCart &&
+        ReactDOM.createPortal(
+          <Backdrop hideCart={hideCartHandler} />,
+          document.getElementById('backdrop-root')
+        )}
+      {showCart &&
+        ReactDOM.createPortal(
+          <Modal>
+            <OrderCart hideCart={hideCartHandler} />
+          </Modal>,
+          document.getElementById('modal-root')
+        )}
     </OrderContext.Provider>
   );
 };
